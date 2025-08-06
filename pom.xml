@@ -6,14 +6,20 @@
     <groupId>blue.loveu</groupId>
     <artifactId>blog</artifactId>
     <version>0.0.1</version>
+
     <name>blog</name>
-    <description>个人博客系统</description>
     <url/>
+    <description>个人博客系统</description>
 
     <packaging>pom</packaging>
 
     <properties>
+        <blog.version>0.0.1</blog.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
+        <spring-boot.version>3.4.7</spring-boot.version>
+        <!-- 插件版本 -->
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     </properties>
 
     <modules>
@@ -24,12 +30,50 @@
     </modules>
 
     <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot的依赖配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type> <!-- POM 类型的依赖，用于导入版本管理 -->
+                <scope>import</scope> <!-- 导入该 POM 中的依赖版本配置，不会作为实际依赖参与编译或运行 -->
+            </dependency>
 
+
+            <!-- 框架模块 -->
+            <dependency>
+                <groupId>blue.loveu</groupId>
+                <artifactId>blog-framework</artifactId>
+                <version>${blog.version}</version>
+            </dependency>
+            <!-- 系统模块 -->
+            <dependency>
+                <groupId>blue.loveu</groupId>
+                <artifactId>blog-system</artifactId>
+                <version>${blog.version}</version>
+            </dependency>
+            <!-- 通用模块 -->
+            <dependency>
+                <groupId>blue.loveu</groupId>
+                <artifactId>blog-common</artifactId>
+                <version>${blog.version}</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 </project>

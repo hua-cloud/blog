@@ -10,13 +10,14 @@
     </parent>
 
     <artifactId>blog-api</artifactId>
-    <version>0.0.1</version>
-    <name>blog-api</name>
     <description>api模块</description>
-    <url/>
+
+    <packaging>jar</packaging>
 
     <dependencies>
-
+        <dependency>
+            <groupId>blue.loveu</groupId>
+            <artifactId>blog-framework</artifactId>
+        </dependency>
     </dependencies>
-
 </project>

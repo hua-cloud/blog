@@ -10,13 +10,12 @@
     </parent>
 
     <artifactId>blog-system</artifactId>
-    <version>0.0.1</version>
-    <name>blog-system</name>
     <description>系统模块</description>
-    <url/>
 
     <dependencies>
-
+        <dependency>
+            <groupId>blue.loveu</groupId>
+            <artifactId>blog-common</artifactId>
+        </dependency>
     </dependencies>
-
 </project>

@@ -10,16 +10,17 @@
     </parent>
 
     <artifactId>blog-framework</artifactId>
-    <version>0.0.1</version>
-    <name>blog-framework</name>
     <description>框架模块</description>
-    <url/>
 
-    <properties>
-
-    </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>blue.loveu</groupId>
+            <artifactId>blog-system</artifactId>
+        </dependency>
     </dependencies>
-
 </project>

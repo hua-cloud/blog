@@ -10,13 +10,9 @@
     </parent>
 
     <artifactId>blog-common</artifactId>
-    <version>0.0.1</version>
-    <name>blog-common</name>
     <description>通用模块</description>
-    <url/>
 
     <dependencies>
 
     </dependencies>
-
 </project>
